@@ -6,6 +6,7 @@ import GlobalStyle from "./components/GlobalStyle";
 import Main from "./pages/Main";
 import Auth from "./pages/Auth";
 import Todo from "./pages/Todo";
+import TodoForm from "./components/TodoForm";
 import TodoDetail from "./pages/TodoDetail";
 
 const ContentWrapper = styled.div`
@@ -21,7 +22,8 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="/auth" element={<Auth />} />
         <Route path="/todo" element={<Todo />} />
-        <Route path="/todo" element={<TodoDetail />} />
+        <Route path="/todo/new" element={<TodoForm />} />
+        <Route path="/todo/:id" element={<TodoDetail />} />
       </Routes>
     </ContentWrapper>
   );
