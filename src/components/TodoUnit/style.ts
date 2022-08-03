@@ -1,33 +1,62 @@
 import styled from "styled-components";
 
 export const ComponentWrapper = styled.div`
+  margin: 10px 0;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+`;
+
+export const TodoUnitContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
 
-  margin: 10px 0;
-  padding: 15px;
-  border: 1px solid lightgray;
-  border-radius: 10px;
+  & div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  & button {
+    font-size: 1.2rem;
+  }
 `;
 
-export const ContentTitle = styled.h3`
-  margin-bottom: 10px;
+export const TodoUnitControl = styled.input``;
+
+export const ContentTitle = styled.p`
+  margin-left: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
 `;
 
 export const ContentDate = styled.p`
+  margin-left: 10px;
   font-size: 0.9rem;
   color: lightgray;
 `;
 
-export const TodoButton = styled.div`
+export const TodoAdditionalControl = styled.div<{ showControl: boolean }>`
+  height: ${({ showControl }) => (showControl ? "30px" : "0px")};
+  transition: 0.2s all linear;
+  overflow: hidden;
+
   & button {
-    width: 40px;
-    height: 40px;
-    margin-left: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
-    font-size: 1.3rem;
-    line-height: 20px;
+    padding: 5px 0px;
+    width: 50%;
+    height: 100%;
+  }
+
+  & button:hover {
+    background: #3d96ff4f;
+  }
+
+  & :first-child {
+    border-radius: 0 0 0 5px;
+  }
+
+  & :last-child {
+    border-radius: 0 0 5px 0;
   }
 `;

@@ -1,5 +1,5 @@
-import React from "react";
-import { BiEditAlt, BiTrash } from "react-icons/bi";
+import React, { useState } from "react";
+import { BiDotsHorizontalRounded } from "react-icons/bi";
 
 import * as S from "./style";
 
@@ -9,20 +9,25 @@ interface Props {
 }
 
 function TodoUnit({ title, updatedAt }: Props) {
+  const [showControl, setShowControl] = useState<boolean>(false);
+  const [isClear, setIsClear] = useState();
+
   return (
     <S.ComponentWrapper>
-      <div>
-        <S.ContentTitle>{title}</S.ContentTitle>
-        <S.ContentDate>{updatedAt}</S.ContentDate>
-      </div>
-      <S.TodoButton>
-        <button className="edit">
-          <BiEditAlt />
+      <S.TodoUnitContent>
+        <div>
+          <S.TodoUnitControl type="checkbox" />
+          <S.ContentTitle>{title}</S.ContentTitle>
+          <S.ContentDate>{updatedAt.split("T")[0]}</S.ContentDate>
+        </div>
+        <button className="edit" onClick={() => setShowControl(!showControl)}>
+          <BiDotsHorizontalRounded />
         </button>
-        <button className="delete">
-          <BiTrash />
-        </button>
-      </S.TodoButton>
+      </S.TodoUnitContent>
+      <S.TodoAdditionalControl showControl={showControl}>
+        <button>Edit</button>
+        <button>Delete</button>
+      </S.TodoAdditionalControl>
     </S.ComponentWrapper>
   );
 }
