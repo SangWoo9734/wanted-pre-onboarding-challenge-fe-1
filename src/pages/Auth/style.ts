@@ -8,28 +8,38 @@ export const ComponentWrapper = styled.div`
   width: 90%;
   margin: auto;
   padding: 20px;
-  border: 1px solid lightgray;
+  border: 2px solid #3d96ff;
   border-radius: 10px;
 
-  & h1 {
-    margin-bottom: 10px;
+  & h2 {
+    margin-bottom: 15px;
+  }
+`;
+
+export const NavSector = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  & button {
+    color: lightgray;
+    text-decoration: underline;
   }
 `;
 
 export const InputSector = styled.div`
-  & * {
-    margin-bottom: 10px;
-  }
+  margin-bottom: 10px;
+
   & p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   & input {
     width: 100%;
+    margin-bottom: 10px;
     padding: 10px;
     border: 1px solid lightgray;
     border-radius: 10px;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 `;
 

@@ -2,13 +2,17 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import * as S from "./style";
+import Button from "../../components/Button";
 
 function Auth() {
   const navigate = useNavigate();
 
   return (
     <S.ComponentWrapper>
-      <h1>Login</h1>
+      <S.NavSector>
+        <h2>Login</h2>
+        <button onClick={() => navigate("/")}>Back</button>
+      </S.NavSector>
       <S.InputSector>
         <p>Email</p>
         <input type="text" />
@@ -17,8 +21,7 @@ function Auth() {
         <p>Password</p>
         <input type="password" />
       </S.InputSector>
-      <S.Button>Login</S.Button>
-      <S.Button onClick={() => navigate("/")}>Back</S.Button>
+      <Button content="Login" />
     </S.ComponentWrapper>
   );
 }
