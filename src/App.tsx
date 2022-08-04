@@ -23,6 +23,7 @@ function App() {
         <Route path="/auth" element={<Auth />} />
         <Route path="/todo" element={<Todo />} />
         <Route path="/todo/new" element={<TodoForm />} />
+        <Route path="/todo/edit" element={<TodoForm />} />
         <Route path="/todo/:id" element={<TodoDetail />} />
       </Routes>
     </ContentWrapper>
