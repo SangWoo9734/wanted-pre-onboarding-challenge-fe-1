@@ -1,25 +1,36 @@
-import React, { useState } from "react";
-import { BiPlusCircle } from "react-icons/bi";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import * as S from "./style";
+import { getTodos, TodoType } from "../../api/todoApi";
 import TodoUnit from "../../components/TodoUnit";
+import Button from "../../components/Button";
 
 function Todo() {
-  const [todoList, setTodoList] = useState([]);
+  const navigate = useNavigate();
+  const [todoList, setTodoList] = useState<TodoType[]>([]);
   const [isAdd, setIsAdd] = useState(false);
+
+  useEffect(() => {
+    void getTodos().then((result) => {
+      console.log(result);
+      if (result.length !== todoList.length) setTodoList(result);
+    });
+  }, [todoList]);
 
   return (
     <S.ComponentWrapper>
-      <h1>To-Do List</h1>
+      <h2>To-Do List</h2>
       <S.UnitWrapper>
-        <button className="add" onClick={() => setIsAdd(true)}>
-          <BiPlusCircle />
-          <p>Add</p>
-        </button>
-        {todoList.map((d) => {
-          return <TodoUnit key={d.id} title={d.title} updatedAt={d.updatedAt} />;
-        })}
+        {todoList.length > 0 ? (
+          todoList.map((d) => {
+            return <TodoUnit key={d.id} id={d.id} title={d.title} updatedAt={d.updatedAt} />;
+          })
+        ) : (
+          <S.NoTodo>No Todo. Add New Todo.</S.NoTodo>
+        )}
       </S.UnitWrapper>
+      <Button content="Add Todo" onClick={() => navigate("/todo/new")} />
     </S.ComponentWrapper>
   );
 }
