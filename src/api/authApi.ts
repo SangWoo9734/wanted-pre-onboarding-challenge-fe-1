@@ -6,7 +6,9 @@ interface Data {
   details?: string;
 }
 
-type ServerError = { details: string };
+interface ServerError {
+  details: string;
+}
 
 const login = async (email: string, password: string) => {
   try {
