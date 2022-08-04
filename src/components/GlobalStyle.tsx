@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-  *{margin:0;padding:0;color:inherit;}
+  *{margin:0;padding:0;color:inherit; font-family: 'Arial'}
   * ::-webkit-scrollbar {display: none;}
   *,:after, :before {box-sizing:border-box;flex-shrink:0;}
   :root {-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;text-size-adjust:100%;cursor:default;line-height:1.5;overflow-wrap:break-word;-moz-tab-size:4;tab-size:4}

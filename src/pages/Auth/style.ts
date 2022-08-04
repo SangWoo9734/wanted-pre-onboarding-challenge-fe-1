@@ -7,12 +7,16 @@ export const ComponentWrapper = styled.div`
   transform: translate(-50%, -50%);
   width: 90%;
   margin: auto;
-  padding: 20px;
+`;
+
+export const ComponentInnerWrapper = styled.div`
   border: 2px solid #3d96ff;
   border-radius: 10px;
+  padding: 20px;
 
   & h2 {
     margin-bottom: 15px;
+    text-transform: capitalize;
   }
 `;
 
@@ -57,4 +61,19 @@ export const Button = styled.button`
   }
 `;
 
-export const GoBackButton = styled.button``;
+export const AuthModeToggle = styled.button`
+  width: 100%;
+  margin-top: 10px;
+  text-decoration: underline;
+  text-align: center;
+  color: lightgray;
+`;
+
+export const AuthNotice = styled.p`
+  margin-top: 15px;
+  padding: 5px 0;
+  background: #00000018;
+  border: 2px solid gray;
+  border-radius: 10px;
+  text-align: center;
+`;

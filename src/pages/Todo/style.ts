@@ -11,16 +11,17 @@ export const ComponentWrapper = styled.div`
   width: 100%;
   padding: 0 20px;
 
-  & h1 {
-    margin-bottom: 20px;
+  & h2 {
+    margin-bottom: 15px;
   }
 `;
 
 export const UnitWrapper = styled.div`
   width: 100%;
-  padding: 0 20px;
-  border: 1px solid lightgray;
+  max-height: 500px;
+
   border-radius: 10px;
+  overflow: auto;
 
   & .add {
     width: 100%;
@@ -37,4 +38,11 @@ export const UnitWrapper = styled.div`
       margin-left: 10px;
     }
   }
+`;
+
+export const NoTodo = styled.div`
+  background: #00000018;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
 `;

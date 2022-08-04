@@ -16,12 +16,23 @@ export const ComponentWrapper = styled.div`
 
 export const TodoDetailHeader = styled.div`
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  & p {
-    margin-left: 15px;
+  & div {
+    display: flex;
     font-size: 1.3rem;
     font-weight: bold;
     text-transform: capitalize;
+  }
+
+  & p {
+    margin-left: 15px;
+  }
+
+  & button {
+    color: lightgray;
+    text-decoration: underline;
   }
 `;
 export const TodoDetailDate = styled.div`
@@ -41,7 +52,7 @@ export const TodoDetailContent = styled.div`
   & .content-body {
     min-height: 300px;
     padding: 20px;
-    background: #00000010;
+    background: #00000018;
     border-radius: 10px;
   }
 `;

@@ -26,9 +26,17 @@ export const TodoUnitContent = styled.div`
 export const TodoUnitControl = styled.input``;
 
 export const ContentTitle = styled.p`
+  width: 150px;
   margin-left: 10px;
   font-size: 1.1rem;
   font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const ContentDate = styled.p`
@@ -42,13 +50,16 @@ export const TodoAdditionalControl = styled.div<{ showControl: boolean }>`
   transition: 0.2s all linear;
   overflow: hidden;
 
-  & button {
+  & .todo-control {
     padding: 5px 0px;
     width: 50%;
     height: 100%;
+    text-align: center;
+    display: inline-block;
+    font-size: 1rem;
   }
 
-  & button:hover {
+  & .todo-control:hover {
     background: #3d96ff4f;
   }
 
