@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 interface Props {
   content: string;
-  onClick?: () => void;
+  onClick?: () => any;
 }
 
 const ButtonWrapper = styled.button`
